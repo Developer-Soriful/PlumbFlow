@@ -87,13 +87,14 @@ export function AboutSection() {
     <section ref={sectionRef} className="bg-white px-4 py-18 sm:px-6 sm:py-22 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)] lg:items-start lg:gap-14">
-          <div className="overflow-hidden rounded-[2rem]">
+          <div className="overflow-hidden rounded-[2rem] bg-[#eef2f7]">
             <Image
-              src="/images/Kpvz8XbHV38RHiTdldTScmM.jpg"
-              alt="Two plumbing professionals reviewing a tablet on site"
-              width={4096}
-              height={2730}
-              className="h-full w-full object-cover"
+              key={activeContent.id}
+              src={activeContent.image.src}
+              alt={activeContent.image.alt}
+              width={activeContent.image.width}
+              height={activeContent.image.height}
+              className="h-full w-full object-cover transition duration-500"
             />
           </div>
 
@@ -159,4 +160,3 @@ export function AboutSection() {
     </section>
   );
 }
-
