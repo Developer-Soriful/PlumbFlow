@@ -1,6 +1,8 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { QuickBookingSection } from "@/components/sections/quick-booking-section";
+import { ServicesSection } from "@/components/sections/services-section";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { Navbar } from "@/components/layout/navbar";
 import { TopBar } from "@/components/layout/top-bar";
 import { OurProcess } from "@/components/sections/our-process";
@@ -19,6 +21,8 @@ export default function Home() {
 
       {/* Our process */}
       <OurProcess />  
+      <ServicesSection />
+      <TestimonialsSection />
     </main>
   );
 }

@@ -2,6 +2,12 @@ export const aboutTabs = [
   {
     id: "mission",
     label: "Our Mission",
+    image: {
+      src: "/images/Kpvz8XbHV38RHiTdldTScmM.jpg",
+      alt: "Two plumbing professionals reviewing a tablet on site",
+      width: 4096,
+      height: 2730,
+    },
     body:
       "At FixFlow, our mission is to provide fast, reliable, and high-quality plumbing services tailored to meet the unique needs of our customers. We strive to be your trusted partner in keeping your home and business.",
     points: [
@@ -14,6 +20,12 @@ export const aboutTabs = [
   {
     id: "expertise",
     label: "Our Expertise",
+    image: {
+      src: "/images/0uxFc4M6TuuW1docugfKFJfHK0.png",
+      alt: "A plumbing professional checking details during a repair visit",
+      width: 832,
+      height: 536,
+    },
     body:
       "Our team brings proven hands-on experience across repairs, installations, diagnostics, and emergency plumbing. We combine practical skill with modern tools so every job is handled with precision and confidence.",
     points: [
@@ -26,6 +38,12 @@ export const aboutTabs = [
   {
     id: "values",
     label: "Our Values",
+    image: {
+      src: "/images/xZW2yMZcSqOIt4gRVCpqbhNHbOs.png",
+      alt: "Plumbers working carefully and collaboratively on a repair",
+      width: 835,
+      height: 539,
+    },
     body:
       "We believe great plumbing service is built on honesty, craftsmanship, and respect for every customer. From the first call to the final check, we focus on clear communication and dependable service you can trust.",
     points: [
@@ -43,4 +61,3 @@ export const aboutStats = [
   { value: 67, suffix: "+", label: "Award-Winning Service" },
   { value: 24, suffix: "/7", label: "Emergency Plumbing Services" },
 ] as const;
-
