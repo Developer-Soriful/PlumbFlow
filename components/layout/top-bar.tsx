@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { contactItems } from "@/lib/site-data";
 import { ClockIcon, MailIcon, PhoneIcon } from "@/components/ui/icons";
 
@@ -8,8 +11,39 @@ const iconMap = {
 };
 
 export function TopBar() {
+  const [showTopBar, setShowTopBar] = useState(true);
+
+  useEffect(() => {
+    const updateTopBarState = () => {
+      const hero = document.getElementById("home-hero");
+
+      if (!hero) {
+        setShowTopBar(true);
+        return;
+      }
+
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      setShowTopBar(heroBottom > 128);
+    };
+
+    updateTopBarState();
+    window.addEventListener("scroll", updateTopBarState, { passive: true });
+    window.addEventListener("resize", updateTopBarState);
+
+    return () => {
+      window.removeEventListener("scroll", updateTopBarState);
+      window.removeEventListener("resize", updateTopBarState);
+    };
+  }, []);
+
   return (
-    <div className="fixed inset-x-0 top-0 z-50 hidden border-b border-white/10 bg-[var(--color-navy)] text-white lg:block">
+    <div
+      className={`fixed inset-x-0 top-0 z-50 hidden border-b border-white/10 bg-[var(--color-navy)] text-white transition-all duration-300 lg:block ${
+        showTopBar
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none -translate-y-full opacity-0"
+      }`}
+    >
       <div className="mx-auto flex h-[42px] max-w-7xl items-center justify-end gap-6 px-6 text-sm font-medium">
         {contactItems.map((item) => {
           const Icon = iconMap[item.type];
